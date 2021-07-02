@@ -41,7 +41,14 @@ def getpw():
     mb.showinfo("Information", f"Dein Passwort für {desc} ist: {usr}: {pw}")
 get_btn = tk.Button(text="Zeige Passwort", command=getpw)
 get_btn.pack()
-
+def showdecs():
+    decs = session_.secret_user.secrets["dsc"]
+    decs_ = "Deine Beschreibungen:\n"
+    for dsc in decs:
+        decs_ += f"{dsc}\n"
+    mb.showinfo("Information", decs_)
+show_btn = tk.Button(text="Zeige alle Beschreibungen", command=showdecs)
+show_btn.pack()
 
 
 window.mainloop()
